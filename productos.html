@@ -13,15 +13,16 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Ajusta el alineamiento al inicio para dar más espacio a la tabla */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; /* Centra la página */
     height: 100vh;
-    overflow-y: auto; /* Permite hacer scroll si la página es muy larga */
+    overflow-y: auto;
 }
 
 h1 {
     font-size: 36px;
-    color: #333;
+    color: #fff;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -42,9 +43,14 @@ header h1 {
 }
 
 /* Table styling */
-table {
+.table-container {
     width: 90%;
     max-width: 1200px;
+    margin: 20px auto;
+}
+
+table {
+    width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
     background-color: #fff;
@@ -57,7 +63,7 @@ th, td {
     text-align: left;
     font-size: 14px;
     border-bottom: 1px solid #ddd;
-    word-wrap: break-word; /* Evita que las celdas se desborden */
+    word-wrap: break-word;
 }
 
 th {
@@ -104,19 +110,17 @@ a.btn:hover {
 @media (max-width: 768px) {
     table {
         width: 100%;
+        font-size: 12px; /* Ajustar tamaño de fuente en pantallas pequeñas */
     }
 
     th, td {
-        font-size: 12px; /* Reducir tamaño de fuente en dispositivos pequeños */
-        padding: 10px; /* Menor espacio en la celda */
+        padding: 10px;
     }
 
     h1 {
-        font-size: 28px; /* Ajuste de tamaño de título en pantallas pequeñas */
+        font-size: 28px; /* Ajuste del título en pantallas pequeñas */
     }
 }
-
-
 
 /* Footer styling */
 .updated {
@@ -125,6 +129,15 @@ a.btn:hover {
     color: #666;
     margin-top: 20px;
 }
+
+footer {
+    background-color: #f4f6f9;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    color: #666;
+}
+
 
   <!-- Aquí se insertará el contenido del CSS -->
     </style>
@@ -135,18 +148,19 @@ a.btn:hover {
     </header>
 
     <main>
-        <p class="updated">Última actualización: 2025-03-21 00:51:07</p>
+        <p class="updated">Última actualización: 2025-03-21 00:58:58</p>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Descripción</th>
-                    <th>Precio Grupo (€)</th>
-                    <th>Enlace</th>
-                </tr>
-            </thead>
-            <tbody>
-                
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descripción</th>
+                        <th>Precio Grupo (€)</th>
+                        <th>Enlace</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
                 <tr>
                     <td>Maquina de Afeitar Remington Ultimate Series F9 XF9000. Cuchillas de Titanio, Uso Seco y Mojado, Cabezal de Recorte Híbrido, Plata y Negro</td>
                     <td>50.0€</td>
@@ -1929,13 +1943,15 @@ a.btn:hover {
                     <td><a href="https://www.amazon.es/dp/B07XXFCRSP" class="btn">Ver Producto</a></td>
                 </tr>
              <!-- Aquí se insertarán las filas de productos -->
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2025-03-21 00:51:07 Todos los derechos reservados.</p>
+        <p>&copy; 2025-03-21 00:58:58 Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
+
 
