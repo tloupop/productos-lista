@@ -15,7 +15,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center; /* Centra la página */
+    align-items: center;
     height: 100vh;
     overflow-y: auto;
 }
@@ -42,13 +42,13 @@ header h1 {
     letter-spacing: 2px;
 }
 
-/* Table styling */
+/* Table container */
 .table-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
+    width: 100%;
+    overflow-x: auto; /* Permite desplazamiento horizontal en móviles */
 }
 
+/* Table styling */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -63,7 +63,9 @@ th, td {
     text-align: left;
     font-size: 14px;
     border-bottom: 1px solid #ddd;
-    word-wrap: break-word;
+    word-wrap: break-word; /* Permite dividir palabras largas */
+    white-space: normal; /* Permite saltos de línea */
+    min-width: 120px; /* Evita que las columnas sean demasiado estrechas */
 }
 
 th {
@@ -88,7 +90,7 @@ a:hover {
     color: #007bff;
 }
 
-/* Estilo para los enlaces como botones */
+/* Botón de enlace */
 a.btn {
     display: inline-block;
     padding: 10px 20px;
@@ -106,19 +108,16 @@ a.btn:hover {
     transform: scale(1.05);
 }
 
-/* Media queries para dispositivos pequeños */
-@media (max-width: 768px) {
-    table {
-        width: 100%;
-        font-size: 12px; /* Ajustar tamaño de fuente en pantallas pequeñas */
-    }
-
+/* Ajustes para móviles */
+@media (max-width: 600px) {
     th, td {
-        padding: 10px;
+        font-size: 12px;  /* Reduce el tamaño de fuente */
+        padding: 8px;  /* Reduce el padding para que haya más espacio */
     }
 
-    h1 {
-        font-size: 28px; /* Ajuste del título en pantallas pequeñas */
+    a.btn {
+        padding: 6px 12px;  /* Reduce el tamaño de los botones */
+        font-size: 12px;
     }
 }
 
@@ -139,6 +138,7 @@ footer {
 }
 
 
+
   <!-- Aquí se insertará el contenido del CSS -->
     </style>
 </head>
@@ -148,7 +148,7 @@ footer {
     </header>
 
     <main>
-        <p class="updated">Última actualización: 2025-03-21 00:58:58</p>
+        <p class="updated">Última actualización: 2025-03-21 01:06:35</p>
 
         <div class="table-container">
             <table>
@@ -1949,7 +1949,7 @@ footer {
     </main>
 
     <footer>
-        <p>&copy; 2025-03-21 00:58:58 Todos los derechos reservados.</p>
+        <p>&copy; 2025-03-21 01:06:35 Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
