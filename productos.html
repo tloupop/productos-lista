@@ -67,18 +67,29 @@ main {
     box-shadow: 0 0 8px rgba(0,123,255,0.5);
 }
 
-/* Estilos de la tabla - Limpia y profesional */
+/* --- NUEVO: Wrapper para tabla responsive --- */
+.tabla-responsive-wrapper {
+    width: 100%;
+    overflow-x: auto; /* ¡Esto permite el scroll horizontal! */
+    -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+
+    /* Movimos estos estilos de la tabla aquí */
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+/* --- MODIFICADO: Estilos de la tabla --- */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
-    background-color: #fff;
-    /* ¡CAMBIO! Bordes más suaves */
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     table-layout: fixed;
-    /* ¡NUEVO! Evita que el contenido se salga de la tarjeta */
-    overflow: hidden;
+
+    /* ¡NUEVO! Esto fuerza a la tabla a ser ancha,
+       activando el scroll en el wrapper */
+    min-width: 650px;
 }
 
 th, td {
@@ -191,24 +202,24 @@ a.btn:hover {
         <img src="./images/catalogo.png" alt="Logo Catálogo" id="logo-web">
 
         <h1>Catálogo de Productos</h1>
-        <p>Actualizado el: 2025-10-28 15:16:59</p>
+        <p>Actualizado el: 2025-10-28 20:00:56</p>
     </header>
 
     <main>
 
         <input type="text" id="buscadorInput" onkeyup="filtrarTabla()" placeholder="Buscar por descripción...">
-
-        <table id="tablaProductos">
-            <thead>
-                <tr>
-                    <th>Foto</th>
-                    <th>Descripción</th>
-                    <th>Precio</th>
-                    <th>Enlace</th>
-                </tr>
-            </thead>
-            <tbody>
-                
+        <div class="tabla-responsive-wrapper">
+            <table id="tablaProductos">
+                <thead>
+                    <tr>
+                        <th>Foto</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Enlace</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
                 <tr>
                     <td><img src="https://m.media-amazon.com/images/I/81sbKEfAGlL._AC_SL1500_.jpg" alt="Foto del producto"></td>
                     <td>HoMedics Zen. Cojín de Meditación Zen. Espuma con Memoria, Aromatizador para Aceites Esenciales</td>
@@ -1840,8 +1851,9 @@ a.btn:hover {
                     <td><a href="https://www.amazon.es/dp/B0DR9GNK5S" class="btn">Ver Producto</a></td>
                 </tr>
             
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </main>
 
     <script>
