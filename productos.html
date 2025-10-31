@@ -70,8 +70,6 @@ main {
 /* --- NUEVO: Wrapper para tabla responsive --- */
 .tabla-responsive-wrapper {
     width: 100%;
-    overflow-x: auto; /* ¡Esto permite el scroll horizontal! */
-    -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
 
     /* Movimos estos estilos de la tabla aquí */
     margin: 20px 0;
@@ -86,10 +84,6 @@ table {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
-
-    /* ¡NUEVO! Esto fuerza a la tabla a ser ancha,
-       activando el scroll en el wrapper */
-    min-width: 650px;
 }
 
 th, td {
@@ -167,9 +161,32 @@ a.btn:hover {
         padding: 0 5px; /* Menos padding lateral en móvil */
     }
 
+    /* Primero, un estilo general para todas las celdas en móvil */
     th, td {
         font-size: 12px;
-        padding: 12px 8px; /* Más compacto en móvil */
+        word-wrap: break-word; /* Asegura que el texto se rompa */
+    }
+
+    /* Columna 1: Foto (25% del ancho) */
+    #tablaProductos th:nth-child(1),
+    #tablaProductos td:nth-child(1) {
+        width: 25%;
+        padding: 8px 4px; /* Menos espacio lateral */
+    }
+
+    /* Columna 2: Descripción (50% del ancho) */
+    #tablaProductos th:nth-child(2),
+    #tablaProductos td:nth-child(2) {
+        width: 50%; /* Más espacio para la descripción */
+        padding: 8px 4px;
+    }
+
+    /* Columna 3: Precio (25% del ancho) */
+    #tablaProductos th:nth-child(3),
+    #tablaProductos td:nth-child(3) {
+        width: 25%;
+        padding: 8px 4px;
+        text-align: center; /* Centramos el precio para que se vea mejor */
     }
 
     a.btn {
@@ -226,7 +243,7 @@ a.btn:hover {
         <img src="./images/catalogo.png" alt="Logo Catálogo" id="logo-web">
 
         <h1>Catálogo de Productos</h1>
-        <p>Actualizado el: 2025-10-31 19:08:33</p>
+        <p>Actualizado el: 2025-10-31 19:24:24</p>
     </header>
 
     <main>
